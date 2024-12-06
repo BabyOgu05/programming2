@@ -1,0 +1,4 @@
+.idea
+appdatabase.db
+*.pyc
+__pycache__

@@ -1,0 +1,126 @@
+{% extends "base.html" %}
+
+<!-- 폼 생성 및 폼에 입력된 데이터를 전송하기 -->
+
+{% block content %}
+<div class="form-container">
+  <div class="title">
+      <form method="post" class="post-form">
+        {{ form.csrf_token }}
+        {% include 'form_errors.html' %}
+          <fielset>
+              <legend style="margin-bottom: 60px;">회원가입</legend>
+              <p style="margin-bottom: 60px;">
+                  <label for="username">닉네임</label>
+                  <input type="text" class="form-contol" name="username" id="userid" value="{{ form.username.data or '' }}">
+              </p>
+              <p style="margin-bottom: 60px;">
+                <label for="email">이메일</label>
+                <input type="text" class="form-contol" name="email" id="email" value="{{ form.email.data or '' }}">
+            </p>
+              <p style="margin-bottom: 60px;">
+                  <label for="password1">비밀번호</label>
+                  <input type="password" class="form-control" name="password1" id="password1" value="{{ form.password1.data or '' }}">
+              </p>
+              <p style="margin-bottom: 60px;">
+                <label for="password2">비밀번호확인</label>
+                <input type="password" class="form-control" name="password2" id="password2" value="{{ form.password2.data or '' }}">
+              </p>
+          </fielset>
+          <fieldset>
+              <legend>개인 정보</legend>
+              <p>
+                  <label for="age">나이</label>
+                  <input type="number" class="form-control" name="age" id="age" value="{{ form.age.data or '' }}">
+              </p>
+              <p>
+                  <label for="sex">성별</label>
+                  <select class="form-control" name="sex" id="sex">
+                      <option value="man">남성</option>
+                      <option value="woman">여성</option>
+                      <option value="other" selected>기타</option>
+                  </select>
+              </p>
+              <p>
+                  <label for="job">직군</label>
+                  <select class="form-control" name="job" id="job">
+                    <option value="medical">의료 및 보건</option>
+                    <option value="public_admin">공공 서비스 및 행정</option>
+                    <option value="industry_tech">산업 및 기술</option>
+                    <option value="education">교육 및 인재 양성</option>
+                    <option value="environment">환경 및 농림수산업</option>
+                    <option value="finance">금융 및 경영</option>
+                    <option value="legal">법률 및 사법</option>
+                    <option value="it">IT 및 디지털 기술</option>
+                    <option value="manufacturing">노동 및 제조업</option>
+                    <option value="logistics">물류 및 교통</option>
+                    <option value="culture">문화 및 콘텐츠</option>
+                    <option value="construction">건설 및 도시 개발</option>
+                    <option value="freelance">자영업 및 프리랜서</option>
+                    <option value="other" selected>기타</option>
+                </select>
+                
+              </p>
+              <p>
+                <label for="keyword">중요하다고 생각되는 키워드</label>
+                    <div class="custom-checkbox-container">
+                        <label class="custom-checkbox">
+                            {{ form.economy() }}
+                            <span class="checkmark"></span> {{ form.economy.label.text }}
+                        </label>
+                        <label class="custom-checkbox">
+                            {{ form.welfare() }}
+                            <span class="checkmark"></span> {{ form.welfare.label.text }}
+                        </label>
+                        <label class="custom-checkbox">
+                            {{ form.security() }}
+                        <span class="checkmark"></span> {{ form.security.label.text }}
+                        </label>
+                        <label class="custom-checkbox">
+                            {{ form.environment() }}
+                            <span class="checkmark"></span> {{ form.environment.label.text }}
+                        </label>
+                        <label class="custom-checkbox">
+                            {{ form.political_reform() }}
+                        <span class="checkmark"></span> {{ form.political_reform.label.text }}
+                        </label>
+                        <label class="custom-checkbox">
+                            {{ form.technology() }}
+                        <span class="checkmark"></span> {{ form.technology.label.text }}
+                        </label>
+                        <label class="custom-checkbox">
+                            {{ form.human_rights() }}
+                            <span class="checkmark"></span> {{ form.human_rights.label.text }}
+                        </label>
+                        <label class="custom-checkbox">
+                            {{ form.defense() }}
+                            <span class="checkmark"></span> {{ form.defense.label.text }}
+                        </label>
+                        <label class="custom-checkbox">
+                            {{ form.legislation() }}
+                            <span class="checkmark"></span> {{ form.legislation.label.text }}
+                        </label>
+                    </div>
+            </p>
+          </fieldset>
+          <div style="text-align: center; margin-top: 30px;">
+            <button type="submit" style="
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: white;
+                color: black;
+                border: 2px solid black;
+                border-radius: 20px;
+                cursor: pointer;
+                
+                
+                ">
+                계정 생성
+            </button>
+      </form>
+  </div>
+ 
+
+
+</div>
+{% endblock %}

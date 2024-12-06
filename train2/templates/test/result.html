@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+   
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+        .category {
+            margin: 10px 0;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .category strong {
+            color: #007bff;
+        }
+        .total-result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-left: 5px solid #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Result</h1>
+
+        <div class="category"><strong>Economy:</strong> {{ economy }}</div>
+        <div class="category"><strong>Welfare:</strong> {{ welfare }}</div>
+        <div class="category"><strong>Security:</strong> {{ security }}</div>
+        <div class="category"><strong>Environment:</strong> {{ environment }}</div>
+        <div class="category"><strong>Political Reform:</strong> {{ political_reform }}</div>
+        <div class="category"><strong>Technology:</strong> {{ technology }}</div>
+        <div class="category"><strong>Human Rights:</strong> {{ human_rights }}</div>
+        <div class="category"><strong>Defense:</strong> {{ defense }}</div>
+        <div class="category"><strong>Legislation:</strong> {{ legislation }}</div>
+
+        <div class="total-result">
+            {{ total }}
+        </div>
+    </div>
+    <div class="footer">
+        © 2024 Your Choice. All Rights Reserved.
+    </div>    
+</body>
+</html>
+
+
+{% endblock %}
