@@ -3,7 +3,7 @@ from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
 
-
+# 김하람
 
 db = SQLAlchemy()
 migrate = Migrate()

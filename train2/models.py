@@ -1,6 +1,7 @@
 from train2 import db
 
-# 사용자 정보 데이터베이스 생성
+# 김하람
+
 
 class User(db.Model):
   id = db.Column(db.Integer, primary_key=True)

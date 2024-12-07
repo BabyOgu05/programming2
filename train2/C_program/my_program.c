@@ -4,6 +4,8 @@
 #include <json.h>
 #include <math.h>
 
+// 강지민, 김하람, 민경준
+
 // 카테고리 목록 정의
 typedef struct {
     const char* name;
