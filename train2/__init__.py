@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+from flask_cors import CORS
 
 
 
@@ -9,6 +10,8 @@ migrate = Migrate()
 
 app = Flask(__name__)
 app.config.from_envvar('APP_CONFIG_FILE')
+
+CORS(app)
 
 # ORM
 db.init_app(app)
